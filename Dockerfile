@@ -4,7 +4,7 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /usr/src/app
 
-RUN pip freeze > requirements.txt
+RUN pip3 freeze > requirements.txt
 
 COPY ./requirements.txt ./
 
