@@ -28,8 +28,6 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    
-    
     path('api/diabetes/', diabetes_view , name='diabetes'),
     path('api/heart/', heart_view , name='heart'),
     path('api/parkinsons/', parkinson_view , name='parkinson'),
