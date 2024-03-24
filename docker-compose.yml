@@ -4,4 +4,4 @@ services:
   django:
     image: codemohitpra2103/multiple-disease-detection:latest
     ports:
-      - '8000:8000'
+      - '80:8000'
