@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['multiple-disease-detection-env.eba-mdcr382y.ap-south-1.elastic
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
-    
+    'http://multiple-disease-detection-front-env.eba-znccgvqy.ap-south-1.elasticbeanstalk.com'
     # other origins...
 ]
 
