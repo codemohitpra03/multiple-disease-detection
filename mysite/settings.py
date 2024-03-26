@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-g*p4@bsekeag0z0b9houwlzp6m66nk7!56__aqsb3iwboik7qx
 
 ALLOWED_HOSTS = ['multiple-disease-detection-env.eba-mdcr382y.ap-south-1.elasticbeanstalk.com','127.0.0.1','localhost']
 
-
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    
+    # other origins...
+]
 
 # Application definition
 
