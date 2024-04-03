@@ -31,7 +31,8 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://multiple-disease-detection-front-env.eba-znccgvqy.ap-south-1.elasticbeanstalk.com',
     'http://multiple-disease-frontend-env.eba-b32mz7rx.ap-south-1.elasticbeanstalk.com',
-    'http://ec2-43-204-233-39.ap-south-1.compute.amazonaws.com'
+    'http://ec2-43-204-233-39.ap-south-1.compute.amazonaws.com',
+    'https://multiple-disease-detection-2103.onrender.com'
     # other origins...
 ]
 
