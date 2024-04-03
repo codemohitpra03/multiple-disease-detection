@@ -27,17 +27,23 @@ jobs:
         echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_ID }} --password-stdin
         docker push codemohitpra2103/multiple-disease-detection
       # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-    - name: Generate deployment package
-      run: zip -r deploy.zip . -x '*.git*'
+    # - name: Generate deployment package
+    #   run: zip -r deploy.zip . -x '*.git*'
       
-    - name: Deploy to EB
-      uses: einaregilsson/beanstalk-deploy@v22
+    # - name: Deploy to EB
+    #   uses: einaregilsson/beanstalk-deploy@v22
+    #   with:
+    #     aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #     application_name: multiple-disease-detection
+    #     environment_name: Multiple-disease-detection-env
+    #     version_label: ${{ steps.date.outputs.date }}
+    #     region: ap-south-1
+    #     deployment_package: deploy.zip
+    - name: Deploy to production
+      uses: johnbeynon/render-deploy-action@v0.0.8
       with:
-        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: multiple-disease-detection
-        environment_name: Multiple-disease-detection-env
-        version_label: ${{ steps.date.outputs.date }}
-        region: ap-south-1
-        deployment_package: deploy.zip
+        service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
+        api-key: ${{ secrets.MY_RENDER_API_KEY }}
+        wait-for-success: true
       
